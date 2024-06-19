@@ -1,11 +1,11 @@
-package pioted.methods;
+package robok.trindade.methods;
 
 import android.content.*;
 import android.graphics.*;
 import android.view.*;
 import android.widget.*;
 
-import pioted.R; 
+import robok.trindade.R; 
 
 import com.google.android.material.dialog.*;
 

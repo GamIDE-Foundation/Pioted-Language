@@ -7,10 +7,10 @@ plugins {
     id("maven-publish")
 }
 
-group = "pioted"
+group = "robok.trindade"
 
 android {
-    namespace = "pioted"
+    namespace = "robok.trindade"
     compileSdk = 34
     
     defaultConfig {
@@ -51,8 +51,8 @@ dependencies {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            groupId = "com.github.gamide.foundation"
-            artifactId = "pioted"
+            groupId = "com.github.GamIDE-Foundation"
+            artifactId = "robok.trindade"
             version = "0.0.1"
 
             afterEvaluate {
