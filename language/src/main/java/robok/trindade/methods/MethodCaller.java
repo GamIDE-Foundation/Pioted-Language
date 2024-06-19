@@ -4,6 +4,9 @@ import android.content.*;
 import android.widget.*;
 import android.graphics.*;
 
+import robok.trindade.methods.view.*;
+import robok.trindade.methods.dialog.*;
+
 import java.lang.ref.*;
 import java.lang.reflect.*;
 import java.util.*;
@@ -13,6 +16,8 @@ public class MethodCaller {
     private Map<String, Method> methodsMap;
     private Context context;
     private Methods methodsInstance;
+    private ViewMethods viewMethodsInstance,
+    private DialogMethods dialogMethodsInstance,
 
     public MethodCaller(Context context) {
         methodsMap = new HashMap<>();
@@ -20,20 +25,29 @@ public class MethodCaller {
         methodsInstance = new Methods(context);
         try {
             methodsMap.put("showToast", Methods.class.getDeclaredMethod("showToast", String.class));
-            methodsMap.put("createButton", Methods.class.getDeclaredMethod("createButton", String.class, String.class));
-            methodsMap.put("createText", Methods.class.getDeclaredMethod("createText", String.class, String.class));
-            methodsMap.put("openTerminal", Methods.class.getDeclaredMethod("openTerminal"));
-			methodsMap.put("showDialog", Methods.class.getDeclaredMethod("showDialog", String.class, String.class));
+            methodsMap.put("createButton", ViewMethods.class.getDeclaredMethod("createButton", String.class, String.class));
+            methodsMap.put("createText", ViewMethods.class.getDeclaredMethod("createText", String.class, String.class));
+            methodsMap.put("openTerminal", Termina.class.getDeclaredMethod("openTerminal"));
+			methodsMap.put("showDialog", DialogMethods.class.getDeclaredMethod("showDialog", String.class, String.class));
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
     }
 
-    public void callMethod(String methodName, Object... args) {
+    public void callMethod(int type, String methodName,  Object... args) {
         Method method = methodsMap.get(methodName);
         if (method != null) {
             try {
-                method.invoke(methodsInstance, args);
+                switch (type) {
+                    case 0:
+                         method.invoke(methodsInstance, args);
+                    case 1:
+                         method.invoke(viewMethodsInstance, args);
+                    case 2:     
+                         method.invoke(dialogMethodsInstance, args);
+                    default:
+                         method.invoke(methodsInstance, args);
+                }
             } catch (Exception e) {
                 e.printStackTrace();
                 Toast.makeText(context, "Erro ao chamar método '" + methodName + "'.", Toast.LENGTH_SHORT).show();

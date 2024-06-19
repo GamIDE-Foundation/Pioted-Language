@@ -46,13 +46,4 @@ public class ViewMethods extends Terminal {
         addToTerminal(robotText);
         onExecute(1);
     }
-	
-	public void showDialog (String title, String message){
-		MaterialAlertDialogBuilder robokDialog = new MaterialAlertDialogBuilder(robokContext);
-		robokDialog.setTitle(title);
-	    robokDialog.setMessage(message);
-		robokDialog.setPositiveButton("OK", null);
-		robokDialog.show();
-		onExecute(0);
-	}
 }
