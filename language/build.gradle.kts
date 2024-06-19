@@ -53,7 +53,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.gamide.foundation"
             artifactId = "pioted"
-            version = "1.0.0-Alpha01"
+            version = "0.0.1"
 
             afterEvaluate {
                 from(components["release"])
