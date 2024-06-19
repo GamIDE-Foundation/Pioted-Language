@@ -16,8 +16,8 @@ public class MethodCaller {
     private Map<String, Method> methodsMap;
     private Context context;
     private Methods methodsInstance;
-    private ViewMethods viewMethodsInstance,
-    private DialogMethods dialogMethodsInstance,
+    private ViewMethods viewMethodsInstance;
+    private DialogMethods dialogMethodsInstance;
 
     public MethodCaller(Context context) {
         methodsMap = new HashMap<>();
