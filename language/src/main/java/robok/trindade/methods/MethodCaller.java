@@ -19,7 +19,7 @@ public class MethodCaller {
         this.context = context;
         methodsInstance = new Methods(context);
         try {
-            methodsMap.put("showToast", Methods.class.getDeclaredMethod("showToast", String.class, int.class));
+            methodsMap.put("showToast", Methods.class.getDeclaredMethod("showToast", String.class));
             methodsMap.put("createButton", Methods.class.getDeclaredMethod("createButton", String.class, String.class));
             methodsMap.put("createText", Methods.class.getDeclaredMethod("createText", String.class, String.class));
             methodsMap.put("openTerminal", Methods.class.getDeclaredMethod("openTerminal"));

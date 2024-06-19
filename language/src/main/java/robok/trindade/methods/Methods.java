@@ -48,7 +48,7 @@ public class Methods {
         terminalSheet.show();
     }
     
-    public void showToast(String s, int lenght) {
+    public void showToast(String s) {
         Toast.makeText(mCtx, s, lenght).show();
     }
 

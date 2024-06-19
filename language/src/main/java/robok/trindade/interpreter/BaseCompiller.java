@@ -25,7 +25,7 @@ public class BaseCompiller {
 	    } else if (methodTyped("createText")) {
 			methodCaller.callMethod(parts[0], parts[1], parts[2]);
 		} else if (methodTyped("showToast")) {
-			methodCaller.callMethod(parts[0], parts[1], parts[2]);
+			methodCaller.callMethod(parts[0], parts[1]);
 		} else if (methodTyped("openTerminal")) {
 			methodCaller.callMethod(parts[0]);
 		} else if (methodTyped("showDialog")) {
