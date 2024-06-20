@@ -17,13 +17,16 @@ public class DialogMethods extends Terminal {
 	
     private Context robokContext;    
     	
+    private RobokTerminal robokTerminal;
+    	
     public DialogMethods (Context context) {
         robokContext = context;
+        robokTerminal = new RobokTerminal(context);
     }
     
     public void onExecute (int typeCode) {
        if (typeCode == 1) {
-           openTerminal();
+          robokTerminal.openTerminal();
        }
     }
     

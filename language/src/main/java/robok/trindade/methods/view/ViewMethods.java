@@ -17,13 +17,16 @@ public class ViewMethods extends Terminal {
 	
     private Context robokContext;    
     	
+    private RobokTerminal robokTerminal;
+    	
     public ViewMethods (Context context) {
         robokContext = context;
+        robokTerminal = new RobokTerminal(context);
     }
     
     public void onExecute (int typeCode) {
        if (typeCode == 1) {
-           openTerminal();
+          robokTerminal.openTerminal();
        }
     }
     
