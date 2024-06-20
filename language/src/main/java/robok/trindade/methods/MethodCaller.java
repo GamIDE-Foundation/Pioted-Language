@@ -6,6 +6,7 @@ import android.graphics.*;
 
 import robok.trindade.methods.*;
 import robok.trindade.util.*;
+import robok.trindade.terminal.*;
 
 import java.lang.ref.*;
 import java.lang.reflect.*;
@@ -17,12 +18,13 @@ public class MethodCaller {
     private Context context;
     
     private Methods methodsInstance;
+    private RobokTerminal terminal;
     
     public MethodCaller(Context context) {
         methodsMap = new HashMap<>();
         this.context = context;
         methodsInstance = new Methods(context);
-        
+        terminal = new RobokTerminal (context);
         try {
             methodsMap.put("showToast", Methods.class.getDeclaredMethod("showToast", String.class));
             methodsMap.put("createButton", Methods.class.getDeclaredMethod("createButton", String.class, String.class));
@@ -31,6 +33,8 @@ public class MethodCaller {
 			methodsMap.put("showDialog", Methods.class.getDeclaredMethod("showDialog", String.class, String.class));
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
+            terminal.addErrorLog("IDE Error: ", e.toString());
+            terminal.show();
         }
     }
 
@@ -41,10 +45,12 @@ public class MethodCaller {
                 method.invoke(methodsInstance, args);
             } catch (Exception e) {
                 e.printStackTrace();
-                Toast.makeText(context, "Erro ao chamar método '" + methodName + "'.", Toast.LENGTH_SHORT).show();
+                terminal.addErrorLog("Call Method Error: ", e.toString());
+                terminal.show();
             }
         } else {
-            Toast.makeText(context, "Método '" + methodName + "' não encontrado.", Toast.LENGTH_SHORT).show();
+            terminal.addErrorLog("Exeption: ", e.toString() + "\n" + methodName + "method not founf");
+            terminal.show();
         }
     }
 }
