@@ -46,7 +46,7 @@ public class ViewMethods {
         robokText.setLayoutParams(textParams);
         robokText.setText(textVal);
         robokText.setTextColor(Color.parseColor(txtColor));
-        robokTerminal.addToTerminal(robotText);
+        robokTerminal.addToTerminal(robokText);
         onExecute(1);
     }
 }
