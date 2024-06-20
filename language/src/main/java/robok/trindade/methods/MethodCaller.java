@@ -49,7 +49,7 @@ public class MethodCaller {
                 terminal.show();
             }
         } else {
-            terminal.addErrorLog("Exeption: ", e.toString() + "\n" + methodName + "method not founf");
+            terminal.addErrorLog("Method not found: ", methodName);
             terminal.show();
         }
     }
