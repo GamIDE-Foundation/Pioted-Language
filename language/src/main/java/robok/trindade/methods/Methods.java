@@ -37,6 +37,6 @@ public class Methods {
     
     public void showToast (String val) {
         var t_val = textUtil.formatSpaces(val);
-        Toast.makeText(robokContext, textUtil.formatWordWrap(t_val);, 4000).show();
+        Toast.makeText(robokContext, textUtil.formatWordWrap(t_val), 4000).show();
     }
 }
