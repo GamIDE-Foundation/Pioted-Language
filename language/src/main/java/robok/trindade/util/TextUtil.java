@@ -14,7 +14,7 @@ public class TextUtil {
         robokContext = context;
     }
     
-    public void formatSpaces(String param) {
+    public String formatSpaces(String param) {
         return param.replaceAll("&{space}", " ");
     }
     
