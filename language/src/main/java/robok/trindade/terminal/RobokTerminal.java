@@ -1,7 +1,7 @@
 package robok.trindade.terminal;
 
 import android.content.*;
-import android.view.*
+import android.view.*;
 import android.widget.*;
 
 import androidx.appcompat.app.*;
