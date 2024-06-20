@@ -6,7 +6,7 @@ import android.widget.*;
 
 import com.google.android.material.bottomsheet.*;
 
-public class Terminal {
+public class RobokTerminal {
 
     private LinearLayout terminal;
     private BottomSheetDialog terminalSheet;
@@ -14,7 +14,7 @@ public class Terminal {
 	
 	private Context robokContext;    
     	
-    public Terminal (Context context) {
+    public RobokTerminal (Context context) {
         robokContext = context;
         
 		initializeBottomSheet();
