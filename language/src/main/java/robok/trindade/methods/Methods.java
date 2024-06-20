@@ -31,6 +31,6 @@ public class Methods {
     }
     
     public void showToast (String val) {
-        Toast.makeText(robokContext, val, lenght).show();
+        Toast.makeText(robokContext, val, 4000).show();
     }
 }

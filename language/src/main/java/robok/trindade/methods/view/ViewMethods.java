@@ -36,17 +36,17 @@ public class ViewMethods {
         robokButton.setLayoutParams(buttonParams);
         robokButton.setText(text);
         robokButton.setBackgroundColor(Color.parseColor(bgColor)); 
-        addToTerminal(robokButton); 
+        robokTerminal.addToTerminal(robokButton); 
         onExecute(1);
     }
 
     public void createText (String textVal, String txtColor) {
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(MATCH_PARENT, WRAP_CONTENT);
-        TextView robotText = new TextView(robokContext);
+        TextView robokText = new TextView(robokContext);
         robokText.setLayoutParams(textParams);
         robokText.setText(textVal);
         robokText.setTextColor(Color.parseColor(txtColor));
-        addToTerminal(robotText);
+        robokTerminal.addToTerminal(robotText);
         onExecute(1);
     }
 }

@@ -6,6 +6,8 @@ import android.widget.*;
 
 import com.google.android.material.bottomsheet.*;
 
+import robok.trindade.R;
+
 public class RobokTerminal {
 
     private LinearLayout terminal;
@@ -20,7 +22,7 @@ public class RobokTerminal {
 		initializeBottomSheet();
 		
         terminalSheet.setCancelable(true);
-        terminal = bottomSheetView.findViewById(R.irobokDialog.terminal);
+        terminal = bottomSheetView.findViewById(R.id.dialog_terminal);
     }
 	
 	public void initializeBottomSheet () {
@@ -36,5 +38,4 @@ public class RobokTerminal {
     public void openTerminal (){
         terminalSheet.show();
     }
-     
 }

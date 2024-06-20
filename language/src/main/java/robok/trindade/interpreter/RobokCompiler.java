@@ -35,7 +35,7 @@ public class RobokCompiler {
 		}
 	}
 	
-	public boolean methodTyped(String parts, String methodName){
+	public boolean methodTyped(String[] parts, String methodName){
 		boolean returnVal;
 		if (parts[0].contains(methodName)) {
 			returnVal = true;

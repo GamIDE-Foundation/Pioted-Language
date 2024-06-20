@@ -27,7 +27,7 @@ public class MethodCaller {
             methodsMap.put("showToast", Methods.class.getDeclaredMethod("showToast", String.class));
             methodsMap.put("createButton", ViewMethods.class.getDeclaredMethod("createButton", String.class, String.class));
             methodsMap.put("createText", ViewMethods.class.getDeclaredMethod("createText", String.class, String.class));
-            methodsMap.put("openTerminal", Termina.class.getDeclaredMethod("openTerminal"));
+            methodsMap.put("openTerminal", RobokTerminal.class.getDeclaredMethod("openTerminal"));
 			methodsMap.put("showDialog", DialogMethods.class.getDeclaredMethod("showDialog", String.class, String.class));
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
