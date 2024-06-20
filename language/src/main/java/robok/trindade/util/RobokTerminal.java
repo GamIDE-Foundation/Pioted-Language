@@ -1,4 +1,4 @@
-package robok.trindade.utils;
+package robok.trindade.util;
 
 import android.content.*;
 import android.view.*;
@@ -22,11 +22,11 @@ public class RobokTerminal {
 		initializeBottomSheet();
 		
         terminalSheet.setCancelable(true);
-        terminal = bottomSheetView.findViewById(R.id.dialog_terminal);
+        terminal = bottomSheetView.findViewById(R.id.background_terminal);
     }
 	
 	public void initializeBottomSheet () {
-        bottomSheetView = LayoutInflater.from(robokContext).inflate(R.layout.terminal, null);
+        bottomSheetView = LayoutInflater.from(robokContext).inflate(R.layout.dialog_terminal, null);
 		terminalSheet = new BottomSheetDialog(robokContext);
 		terminalSheet.setContentView(bottomSheetView);
     }
