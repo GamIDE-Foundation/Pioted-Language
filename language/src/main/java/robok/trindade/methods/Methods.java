@@ -16,12 +16,13 @@ public class Methods {
 	private static final int WRAP_CONTENT= LinearLayout.LayoutParams.WRAP_CONTENT;
 	
     private Context robokContext;
-    
     private RobokTerminal robokTerminal;
+    private TextUtil textUtil;
     	
     public Methods (Context context) {
         robokContext = context;
         robokTerminal = new RobokTerminal(context);
+        textUtil = new TextUtil(context);
     }
     
     public void onExecute (int typeCode) {
@@ -31,6 +32,7 @@ public class Methods {
     }
     
     public void showToast (String val) {
-        Toast.makeText(robokContext, val, 4000).show();
+        var t_val = textUtil.formatSpaces(val);
+        Toast.makeText(robokContext, textUtil.formatWordWrap(t_val);, 4000).show();
     }
 }
