@@ -1,4 +1,4 @@
-package robok.trindade.methods.view;
+package robok.trindade.methods.dialog;
 
 import android.content.*;
 import android.graphics.*;
