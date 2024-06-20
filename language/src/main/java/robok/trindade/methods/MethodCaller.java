@@ -19,11 +19,15 @@ public class MethodCaller {
     private Methods methodsInstance;
     private ViewMethods viewMethodsInstance;
     private DialogMethods dialogMethodsInstance;
-
+    private RebokTerminal terminalMethodsInstance;
+    
     public MethodCaller(Context context) {
         methodsMap = new HashMap<>();
         this.context = context;
         methodsInstance = new Methods(context);
+        viewMethodsInstance = new ViewMethods(context);
+        dialogMethodsInstance = new DialogMethods(context);
+        terminalMethodsInstance = new RebokTerminal(context);
         try {
             methodsMap.put("showToast", Methods.class.getDeclaredMethod("showToast", String.class));
             methodsMap.put("createButton", ViewMethods.class.getDeclaredMethod("createButton", String.class, String.class));
@@ -46,8 +50,8 @@ public class MethodCaller {
                          method.invoke(viewMethodsInstance, args);
                     case 2:     
                          method.invoke(dialogMethodsInstance, args);
-                    default:
-                         method.invoke(methodsInstance, args);
+                    case 4:
+                         method.invoke(terminalMethodsInstance, args);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
