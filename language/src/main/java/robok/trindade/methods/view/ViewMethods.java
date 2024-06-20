@@ -10,7 +10,7 @@ import robok.trindade.utils.*;
 
 import com.google.android.material.dialog.*;
 
-public class ViewMethods extends Terminal {
+public class ViewMethods {
 
     private static final int MATCH_PARENT = LinearLayout.LayoutParams.MATCH_PARENT;
 	private static final int WRAP_CONTENT= LinearLayout.LayoutParams.WRAP_CONTENT;
