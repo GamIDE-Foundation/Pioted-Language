@@ -32,7 +32,7 @@ public class ViewMethods {
     }
     
     public void createButton (String text, String bgColor) {
-        var txt = textUtil.formatSpaces(text);
+        String txt = textUtil.formatSpaces(text);
         LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(MATCH_PARENT, WRAP_CONTENT);
         Button robokButton = new Button(robokContext);
         robokButton.setLayoutParams(buttonParams);
@@ -43,7 +43,7 @@ public class ViewMethods {
     }
 
     public void createText (String text, String txtColor) {
-        var txt = textUtil.formatSpaces(text);
+        String txt = textUtil.formatSpaces(text);
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(MATCH_PARENT, WRAP_CONTENT);
         TextView robokText = new TextView(robokContext);
         robokText.setLayoutParams(textParams);

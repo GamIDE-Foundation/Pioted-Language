@@ -32,8 +32,8 @@ public class DialogMethods {
     }
     
 	public void showDialog (String title, String message){
-	    var t = textUtil.formatSpaces(title);
-	    var m = textUtil.formatSpaces(message);
+	    String t = textUtil.formatSpaces(title);
+	    String m = textUtil.formatSpaces(message);
 		MaterialAlertDialogBuilder robokDialog = new MaterialAlertDialogBuilder(robokContext);
 		robokDialog.setTitle(textUtil.formatWordWrap(t));
 	    robokDialog.setMessage(textUtil.formatWordWrap(m));
