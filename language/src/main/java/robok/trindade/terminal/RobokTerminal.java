@@ -66,5 +66,6 @@ public class RobokTerminal extends BottomSheetDialog {
             case AppCompatDelegate.MODE_NIGHT_YES:
                  return true;
         }
+        return false;
     }
 }
