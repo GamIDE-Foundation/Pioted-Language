@@ -27,7 +27,7 @@ public class Methods {
     
     public void onExecute (int typeCode) {
        if (typeCode == 1) {
-          robokTerminal.openTerminal();
+          robokTerminal.show();
        }
     }
     
@@ -42,22 +42,26 @@ public class Methods {
     
     public void createButton (String text, String bgColor) {
         String txt = textUtil.formatSpaces(text);
+        
         LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(MATCH_PARENT, WRAP_CONTENT);
         Button robokButton = new Button(robokContext);
         robokButton.setLayoutParams(buttonParams);
         robokButton.setText(textUtil.formatWordWrap(txt));
-        robokButton.setBackgroundColor(Color.parseColor(bgColor)); 
+        robokButton.setBackgroundColor(Color.parseColor(bgColor));
+        
         robokTerminal.addToTerminal(robokButton); 
         onExecute(1);
     }
 
     public void createText (String text, String txtColor) {
         String txt = textUtil.formatSpaces(text);
+        
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(MATCH_PARENT, WRAP_CONTENT);
         TextView robokText = new TextView(robokContext);
         robokText.setLayoutParams(textParams);
         robokText.setText(textUtil.formatWordWrap(txt));
         robokText.setTextColor(Color.parseColor(txtColor));
+        
         robokTerminal.addToTerminal(robokText);
         onExecute(1);
     }
@@ -65,11 +69,13 @@ public class Methods {
     public void showDialog (String title, String message){
 	    String t = textUtil.formatSpaces(title);
 	    String m = textUtil.formatSpaces(message);
+	    
 		MaterialAlertDialogBuilder robokDialog = new MaterialAlertDialogBuilder(robokContext);
 		robokDialog.setTitle(textUtil.formatWordWrap(t));
 	    robokDialog.setMessage(textUtil.formatWordWrap(m));
 		robokDialog.setPositiveButton("OK", null);
 		robokDialog.show();
+		
 		onExecute(0);
 	}
     

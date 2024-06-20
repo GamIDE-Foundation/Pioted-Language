@@ -8,34 +8,23 @@ import com.google.android.material.bottomsheet.*;
 
 import robok.trindade.R;
 
-public class RobokTerminal {
+public class RobokTerminal extends BottomSheetDialog {
 
     private LinearLayout terminal;
-    private BottomSheetDialog terminalSheet;
-	private View bottomSheetView;
-	
-	private Context robokContext;    
-    	
+    private View bottomSheetView;
+    
     public RobokTerminal (Context context) {
-        robokContext = context;
+        super(context);
         
-		initializeBottomSheet();
-		
-        terminalSheet.setCancelable(true);
+        bottomSheetView = LayoutInflater.from(context).inflate(R.layout.dialog_terminal, null);
+        setContentView(bottomSheetView);
+        
+        setCancelable(true);
         terminal = bottomSheetView.findViewById(R.id.background_terminal);
     }
-	
-	public void initializeBottomSheet () {
-        bottomSheetView = LayoutInflater.from(robokContext).inflate(R.layout.dialog_terminal, null);
-		terminalSheet = new BottomSheetDialog(robokContext);
-		terminalSheet.setContentView(bottomSheetView);
-    }
     
-    public void addToTerminal (View view){
+    
+    public void addToTerminal(View view) {
         terminal.addView(view);
-    }
-    
-    public void openTerminal (){
-        terminalSheet.show();
     }
 }
