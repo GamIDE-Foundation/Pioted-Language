@@ -4,9 +4,10 @@ import android.content.*;
 import android.widget.*;
 import android.graphics.*;
 
-import robok.trindade.methods.view.*;
-import robok.trindade.methods.dialog.*;
-import robok.trindade.util.*;
+import robok.trindade.methods.view.ViewMethods;
+import robok.trindade.methods.dialog.DialogMethods;
+import robok.trindade.util.RebokTerminal;
+import robok.trindade.util.TextUtil;
 
 import java.lang.ref.*;
 import java.lang.reflect.*;
@@ -16,6 +17,7 @@ public class MethodCaller {
 
     private Map<String, Method> methodsMap;
     private Context context;
+    
     private Methods methodsInstance;
     private ViewMethods viewMethodsInstance;
     private DialogMethods dialogMethodsInstance;
