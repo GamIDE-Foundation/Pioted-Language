@@ -6,7 +6,7 @@ import android.view.*;
 import android.widget.*;
 
 import robok.trindade.R; 
-import robok.trindade.utils.*;
+import robok.trindade.util.*;
 
 import com.google.android.material.dialog.*;
 
