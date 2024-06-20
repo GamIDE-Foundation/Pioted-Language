@@ -4,9 +4,10 @@ import android.content.*;
 import android.widget.*;
 import android.graphics.*;
 
-import robok.trindade.methods.view.*;
-import robok.trindade.methods.dialog.*;
-import robok.trindade.util.*;
+import robok.trindade.methods.view.ViewMethods;
+import robok.trindade.methods.dialog.DialogMethods;
+import robok.trindade.util.RobokTerminal;
+import robok.trindade.util.TextUtil;
 
 import java.lang.ref.*;
 import java.lang.reflect.*;
@@ -16,14 +17,19 @@ public class MethodCaller {
 
     private Map<String, Method> methodsMap;
     private Context context;
+    
     private Methods methodsInstance;
     private ViewMethods viewMethodsInstance;
     private DialogMethods dialogMethodsInstance;
-
+    private RobokTerminal terminalMethodsInstance;
+    
     public MethodCaller(Context context) {
         methodsMap = new HashMap<>();
         this.context = context;
         methodsInstance = new Methods(context);
+        viewMethodsInstance = new ViewMethods(context);
+        dialogMethodsInstance = new DialogMethods(context);
+        terminalMethodsInstance = new RobokTerminal(context);
         try {
             methodsMap.put("showToast", Methods.class.getDeclaredMethod("showToast", String.class));
             methodsMap.put("createButton", ViewMethods.class.getDeclaredMethod("createButton", String.class, String.class));
@@ -46,8 +52,8 @@ public class MethodCaller {
                          method.invoke(viewMethodsInstance, args);
                     case 2:     
                          method.invoke(dialogMethodsInstance, args);
-                    default:
-                         method.invoke(methodsInstance, args);
+                    case 4:
+                         method.invoke(terminalMethodsInstance, args);
                 }
             } catch (Exception e) {
                 e.printStackTrace();

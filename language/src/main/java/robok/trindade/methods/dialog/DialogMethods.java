@@ -15,13 +15,14 @@ public class DialogMethods {
     private static final int MATCH_PARENT = LinearLayout.LayoutParams.MATCH_PARENT;
 	private static final int WRAP_CONTENT= LinearLayout.LayoutParams.WRAP_CONTENT;
 	
-    private Context robokContext;    
-    	
+    private Context robokContext;
     private RobokTerminal robokTerminal;
+    private TextUtil textUtil;
     	
     public DialogMethods (Context context) {
         robokContext = context;
         robokTerminal = new RobokTerminal(context);
+        textUtil = new TextUtil(context);
     }
     
     public void onExecute (int typeCode) {
@@ -31,9 +32,11 @@ public class DialogMethods {
     }
     
 	public void showDialog (String title, String message){
+	    String t = textUtil.formatSpaces(title);
+	    String m = textUtil.formatSpaces(message);
 		MaterialAlertDialogBuilder robokDialog = new MaterialAlertDialogBuilder(robokContext);
-		robokDialog.setTitle(title);
-	    robokDialog.setMessage(message);
+		robokDialog.setTitle(textUtil.formatWordWrap(t));
+	    robokDialog.setMessage(textUtil.formatWordWrap(m));
 		robokDialog.setPositiveButton("OK", null);
 		robokDialog.show();
 		onExecute(0);
