@@ -6,7 +6,7 @@ import android.graphics.*;
 
 import robok.trindade.methods.view.ViewMethods;
 import robok.trindade.methods.dialog.DialogMethods;
-import robok.trindade.util.RebokTerminal;
+import robok.trindade.util.RobokTerminal;
 import robok.trindade.util.TextUtil;
 
 import java.lang.ref.*;
@@ -21,7 +21,7 @@ public class MethodCaller {
     private Methods methodsInstance;
     private ViewMethods viewMethodsInstance;
     private DialogMethods dialogMethodsInstance;
-    private RebokTerminal terminalMethodsInstance;
+    private RobokTerminal terminalMethodsInstance;
     
     public MethodCaller(Context context) {
         methodsMap = new HashMap<>();
@@ -29,7 +29,7 @@ public class MethodCaller {
         methodsInstance = new Methods(context);
         viewMethodsInstance = new ViewMethods(context);
         dialogMethodsInstance = new DialogMethods(context);
-        terminalMethodsInstance = new RebokTerminal(context);
+        terminalMethodsInstance = new RobokTerminal(context);
         try {
             methodsMap.put("showToast", Methods.class.getDeclaredMethod("showToast", String.class));
             methodsMap.put("createButton", ViewMethods.class.getDeclaredMethod("createButton", String.class, String.class));
