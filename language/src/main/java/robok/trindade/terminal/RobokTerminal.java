@@ -39,7 +39,7 @@ public class RobokTerminal extends BottomSheetDialog {
     public void addLog(String TAG, String LOG) {
         String LOG_COLOR = WHITE;
         if (isDarkMode()) { 
-           LOG_COLOR = DARK;
+           LOG_COLOR = BLACK;
         }
         TextView logText = new TextView(getContext());
         logText.setText(HtmlCompat.fromHtml("<font color=\"" + LOG_COLOR + "\">"+ TAG + "</font>", HtmlCompat.FROM_HTML_MODE_LEGACY) + LOG);
