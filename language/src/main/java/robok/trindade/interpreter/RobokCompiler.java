@@ -21,15 +21,15 @@ public class RobokCompiler {
 		var codeText = codeToRun;
 		var parts = codeText.split(" ");
 		if (methodTyped(parts[0], "createButton")) {
-			methodCaller.callMethod(1, parts[0], parts[1], parts[2]);
+			methodCaller.callMethod(parts[0], parts[1], parts[2]);
 	    } else if (methodTyped(parts[0], "createText")) {
-			methodCaller.callMethod(1, parts[0], parts[1], parts[2]);
+			methodCaller.callMethod(parts[0], parts[1], parts[2]);
 		} else if (methodTyped(parts[0], "showToast")) {
-			methodCaller.callMethod(0, parts[0], parts[1]);
+			methodCaller.callMethod(parts[0], parts[1]);
 		} else if (methodTyped(parts[0], "openTerminal")) {
-			methodCaller.callMethod(0, parts[0]);
+			methodCaller.callMethod(parts[0]);
 		} else if (methodTyped(parts[0], "showDialog")) {
-			methodCaller.callMethod(2, parts[0], parts[1], parts[2]);
+			methodCaller.callMethod(parts[0], parts[1], parts[2]);
 		} else {
 			Toast.makeText(context, "Nenhum método encontrado", 4000).show();
 		}
