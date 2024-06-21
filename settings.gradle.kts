@@ -14,6 +14,6 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "pioted-language"
+rootProject.name = "robok-language"
 
 include(":language")
