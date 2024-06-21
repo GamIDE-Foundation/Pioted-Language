@@ -11,6 +11,7 @@ import com.google.android.material.bottomsheet.*;
 
 import robok.trindade.R;
 
+
 public class RobokTerminal extends BottomSheetDialog {
 
     private LinearLayout terminal;
