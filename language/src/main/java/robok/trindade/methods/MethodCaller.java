@@ -6,6 +6,7 @@ import android.graphics.*;
 
 import robok.trindade.methods.*;
 import robok.trindade.util.*;
+import robok.trindade.terminal.*;
 
 import java.lang.ref.*;
 import java.lang.reflect.*;
@@ -32,7 +33,7 @@ public class MethodCaller {
 			methodsMap.put("showDialog", Methods.class.getDeclaredMethod("showDialog", String.class, String.class));
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
-            terminal.addToTerminal("IDE Error: " + e.toString());
+            terminal.addErrorLog("IDE Error: ", e.toString());
             terminal.show();
         }
     }
@@ -44,11 +45,11 @@ public class MethodCaller {
                 method.invoke(methodsInstance, args);
             } catch (Exception e) {
                 e.printStackTrace();
-                terminal.addToTerminal("CallMethod Error: " + e.toString());
+                terminal.addErrorLog("Call Method Error: ", e.toString());
                 terminal.show();
             }
         } else {
-            terminal.addToTerminal("Exceptio: " + e.toString() + "\n" + methodName + "method not found");
+            terminal.addErrorLog("Method not found: ", methodName);
             terminal.show();
         }
     }
